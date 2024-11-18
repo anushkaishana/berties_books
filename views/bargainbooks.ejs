@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= shopName %> - Bargain Books</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to <%= shopName %></h1>
+    </header>
+    <main>
+        <h2>Bargain Books</h2>
+        <ul>
+            <% if (bargainBooks && bargainBooks.length > 0) { %>
+                <% bargainBooks.forEach(book => { %>
+                    <li><%= book.name %> - £<%= book.price.toFixed(2) %></li>
+                <% }); %>
+            <% } else { %>
+                <p>No bargain books available at the moment.</p>
+            <% } %>
+        </ul>
+    </main>
+</body>
+</html>
